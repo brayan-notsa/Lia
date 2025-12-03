@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compter les mots </title>
+</head>
+<body>
+
+    {% if i %}
+    <div class="mb2" style="border-style: groove; border-radius: 10px;">
+        <div class="card-header">
+            <p class="m-0" style="font-size: 20px;">
+                {{word}} mot(s) dans le texte
+            </p>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="col-12 pb-3" style="background-color: aliceblue; border-style: groove; border-radius: 10px;" >
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="text1">Entrez une phrase</label>
+                <textarea class="form-control" placeholder="Coller votre texte ici pour compter les mots"
+                
+                name="texttocount" id="text1" rows="8" style="background-color: aliceblue;">
+                {{text}}
+            </textarea>
+            </div>
+            <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Démarrer</button>
+            </div>
+        </form>
+
+    </div>
+    
+</body>
+</html>
